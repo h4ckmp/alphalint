@@ -1,6 +1,6 @@
 # AlphaLint
 
-Fast, multi-language code linter powered by tree-sitter. Analyze TypeScript, JavaScript, Python, and Go with a unified rule engine.
+Fast, multi-language code linter powered by tree-sitter. Unified rule engine for JS/TS/Python/Go.
 
 ## Install
 
@@ -11,14 +11,9 @@ npm install -g alphalint
 ## Quick Start
 
 ```bash
-# 1. Initialize config (optional)
-alphalint init
-
-# 2. Lint your code
-alphalint src/
-
-# 3. Get JSON report for CI
-alphalint src/ --format json
+alphalint init            # Generate .alphalintrc.json
+alphalint src/            # Lint your code
+alphalint src/ --format json  # JSON report for CI
 ```
 
 ## Built-in Rules
@@ -27,17 +22,15 @@ alphalint src/ --format json
 |------|-----------|-------------|
 | `max-function-length` | JS/TS/Py/Go | Functions exceeding N lines (default: 50) |
 | `max-nesting-depth` | JS/TS/Py/Go | Nesting depth exceeding N levels (default: 4) |
-| `no-console` | JS/TS | console.log/warn/error calls in production code |
+| `no-console` | JS/TS | `console.*` calls in production code |
 | `no-any` | TS | Usage of `any` type |
 | `no-unused-vars` | JS/TS | Declared but unused variables |
 
 ## Configuration
 
-Create `.alphalintrc.json`:
-
+`.alphalintrc.json`:
 ```json
 {
-  "exclude": ["node_modules", "dist"],
   "rules": {
     "max-function-length": ["warning", { "max": 40 }],
     "no-console": ["error", { "allow": ["warn", "error"] }],
@@ -54,7 +47,7 @@ Create `.alphalintrc.json`:
 
 ## Performance
 
-100 files in ~50ms via tree-sitter WASM — no native bindings required.
+100 files in ~50ms via tree-sitter WASM — no native bindings needed.
 
 ## License
 
