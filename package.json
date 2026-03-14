@@ -1,7 +1,7 @@
 {
   "name": "alphalint",
   "version": "0.1.0",
-  "description": "跨语言智能代码静态分析工具",
+  "description": "Fast, multi-language code linter powered by tree-sitter",
   "type": "module",
   "main": "src/index.js",
   "bin": {
@@ -21,5 +21,13 @@
     "tree-sitter",
     "multi-language"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h4ckmp/alphalint.git"
+  },
+  "homepage": "https://github.com/h4ckmp/alphalint#readme",
+  "engines": {
+    "node": ">=18"
+  }
 }
