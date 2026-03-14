@@ -1,0 +1,25 @@
+{
+  "name": "alphalint",
+  "version": "0.1.0",
+  "description": "跨语言智能代码静态分析工具",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "alphalint": "src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "lint": "node src/cli.js check ."
+  },
+  "dependencies": {
+    "tree-sitter-wasms": "^0.1.13",
+    "web-tree-sitter": "^0.24.7"
+  },
+  "keywords": [
+    "linter",
+    "static-analysis",
+    "tree-sitter",
+    "multi-language"
+  ],
+  "license": "MIT"
+}
